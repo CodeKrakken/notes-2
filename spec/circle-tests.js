@@ -1,4 +1,4 @@
-(function(exports) {
+(function() {
   function testCircleRadiusDefaultsTo10() {
     var circle = new Circle();
 
