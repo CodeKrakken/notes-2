@@ -2,11 +2,7 @@
   function testCircleRadiusDefaultsTo10() {
     var circle = new Circle();
 
-    if (circle.radius === 10) {
-      console.log("Huzzah!")
-    } else {
-      throw new Error("Circle size is not 10");
-    }
+    assert.isTrue(circle.radius === 10);
   };
 
   testCircleRadiusDefaultsTo10();
