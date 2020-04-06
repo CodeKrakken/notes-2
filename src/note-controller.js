@@ -5,7 +5,9 @@
   }
 
   NoteController.prototype.getHTML = function() {
-    return this.notelistview.returnHTML();
+    this.content = this.notelistview.returnHTML();
+    document.getElementById("app").innerHTML = this.content;
+    return this.content;
   }
 
   exports.NoteController = NoteController;
