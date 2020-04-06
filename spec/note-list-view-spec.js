@@ -1,8 +1,8 @@
 (function() {
   function testStoresANoteListModel() {
-    var notelist = new NoteList;
+    notelist = new NoteList;
     notelist.createNote("I LIVE");
-    var notelistview = new NoteListView(notelist);
+    notelistview = new NoteListView(notelist);
     assert.isTrue(notelistview.notelist.notes[0].text === "I LIVE");
   }
 
@@ -11,9 +11,9 @@
 
 (function() {
   function testReturnsSingleItemNoteListWithHTML() {
-    var notelist = new NoteList;
+    notelist = new NoteList;
     notelist.createNote("I LIVE");
-    var notelistview = new NoteListView(notelist);
+    notelistview = new NoteListView(notelist);
     assert.isTrue(notelistview.returnHTML() === '<div align="center"><ul><li>I LIVE</li></ul></div>');
   }
 
@@ -21,13 +21,24 @@
 })(this);
 
 (function() {
-  function testReturnsTwoItemNoteListWithHTML() {
-    var notelist = new NoteList;
+  function testReturnsSeveralItemNoteListWithHTML() {
+    notelist = new NoteList;
     notelist.createNote("One");
     notelist.createNote("Two");
-    var notelistview = new NoteListView(notelist);
-    assert.isTrue(notelistview.returnHTML() === '<div align="center"><ul><li>One</li><li>Two</li></ul></div>')
+    notelist.createNote("Several");
+    notelistview = new NoteListView(notelist);
+    assert.isTrue(notelistview.returnHTML() === '<div align="center"><ul><li>One</li><li>Two</li><li>Several</li></ul></div>')
   }
 
-  testReturnsTwoItemNoteListWithHTML();
+  testReturnsSeveralItemNoteListWithHTML();
+})(this);
+
+(function() {
+  function testReturnsNoItemListWithHTML() {
+    notelist = new NoteList;
+    notelistview = new NoteListView(notelist);
+    assert.isTrue(notelistview.returnHTML() === '<div align="center"><ul><li></li></ul></div>')
+  }
+
+  testReturnsNoItemListWithHTML();
 })(this);
