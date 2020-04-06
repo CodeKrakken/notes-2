@@ -48,3 +48,14 @@
 
   testNoteControllerNoteListViewStoresNoteList();
 })(this);
+
+(function() {
+  function testNoteListControllerGetsHTMLFromNoteListView() {
+    var notelist = new NoteList;
+    var noteController = new NoteController(notelist);
+    noteController.notelist.createNote("Favourite drink: seltzer, after the salsa");
+    assert.isTrue(noteController.getHTML() === '<div align="center"><ul><li>Favourite drink: seltzer, after the salsa</li></ul></div>');
+  }
+
+  testNoteListControllerGetsHTMLFromNoteListView();
+})(this);
