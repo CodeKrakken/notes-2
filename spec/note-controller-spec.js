@@ -38,3 +38,13 @@
 
   testNoteControllerCreatesANoteListView();
 })(this);
+
+(function() {
+  function testNoteControllerNoteListViewStoresNoteList() {
+    var notelist = new NoteList;
+    var noteController = new NoteController(notelist);
+    assert.isTrue(noteController.notelistview.notelist instanceof NoteList);
+  }
+
+  testNoteControllerNoteListViewStoresNoteList();
+})(this);
