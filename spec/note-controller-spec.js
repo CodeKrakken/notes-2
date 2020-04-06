@@ -28,3 +28,13 @@
 
   testNoteControllerCanAddANote();
 })(this);
+
+(function() {
+  function testNoteControllerCreatesANoteListView() {
+    var notelist = new NoteList;
+    var noteController = new NoteController(notelist);
+    assert.isTrue(noteController.notelistview instanceof NoteListView);
+  }
+
+  testNoteControllerCreatesANoteListView();
+})(this);
