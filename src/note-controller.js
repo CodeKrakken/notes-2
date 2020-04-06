@@ -1,6 +1,6 @@
 (function(exports) {
-  function NoteController() {
-
+  function NoteController(notelist) {
+    this.notelist = notelist;
   }
 
   exports.NoteController = NoteController;
