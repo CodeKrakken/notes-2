@@ -6,8 +6,11 @@
 
   NoteController.prototype.getHTML = function() {
     this.content = this.notelistview.returnHTML();
-    document.getElementById("app").innerHTML = this.content;
-    return this.content;
+    window.onload = function() {
+      document.getElementById("app").innerHTML = this.content;
+      return this.content;
+    }
+
   }
 
   exports.NoteController = NoteController;

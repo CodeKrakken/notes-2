@@ -54,20 +54,9 @@
     var notelist = new NoteList;
     var noteController = new NoteController(notelist);
     noteController.notelist.createNote("Favourite drink: seltzer, after the salsa");
-    assert.isTrue(noteController.getHTML() === '<div align="center"><ul><li>Favourite drink: seltzer, after the salsa</li></ul></div>');
-  }
-
-  testNoteListControllerGetsHTMLFromNoteListView();
-})(this);
-
-(function() {
-  function testNoteListControllerInsertsHTMLIntoAppElement() {
-    var notelist = new NoteList;
-    var noteController = new NoteController(notelist);
-    noteController.notelist.createNote("Favourite drink: seltzer, after the salsa");
     noteController.getHTML();
     assert.isTrue(noteController.content === '<div align="center"><ul><li>Favourite drink: seltzer, after the salsa</li></ul></div>');
   }
 
-  testNoteListControllerInsertsHTMLIntoAppElement()
+  testNoteListControllerGetsHTMLFromNoteListView();
 })(this);
