@@ -54,8 +54,7 @@ clearDoubles();
 
 (function() {
   function testReturnsNoItemListWithHTML() {
-    var notelist = new NoteList;
-    notelistview = new NoteListView(notelist);
+    notelistview = new NoteListView(notelistmock);
     assert.isTrue(notelistview.returnHTML() === '<div align="center"><ul><li></li></ul></div>')
   }
 
