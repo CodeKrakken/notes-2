@@ -28,8 +28,7 @@
 
 (function() {
   function testNoteControllerCreatesANoteListView() {
-    var notelist = new NoteList;
-    var noteController = new NoteController(notelist, NoteListView);
+    var noteController = new NoteController(notelistmock, NoteListView);
     assert.isTrue(noteController.notelistview instanceof NoteListView);
   }
 
