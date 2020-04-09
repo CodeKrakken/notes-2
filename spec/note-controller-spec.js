@@ -37,9 +37,8 @@
 
 (function() {
   function testNoteControllerNoteListViewStoresNoteList() {
-    var notelist = new NoteList;
-    var noteController = new NoteController(notelist, NoteListView);
-    assert.isTrue(noteController.notelistview.notelist instanceof NoteList);
+    var noteController = new NoteController(notelistmock, NoteListView);
+    assert.isTrue(noteController.notelistview.notelist);
   }
 
   testNoteControllerNoteListViewStoresNoteList();
