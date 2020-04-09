@@ -40,11 +40,10 @@ clearDoubles();
 
 (function() {
   function testReturnsSeveralItemNoteListWithHTML() {
-    var notelist = new NoteList;
-    notelist.createNote("One");
-    notelist.createNote("Two");
-    notelist.createNote("Several");
-    var notelistview = new NoteListView(notelist);
+    notelistmock.createNote("One");
+    notelistmock.createNote("Two");
+    notelistmock.createNote("Several");
+    var notelistview = new NoteListView(notelistmock);
     assert.isTrue(notelistview.returnHTML() === '<div align="center"><ul><li>One</li><li>Two</li><li>Several</li></ul></div>')
   }
 
