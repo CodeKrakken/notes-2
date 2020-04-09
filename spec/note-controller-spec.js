@@ -1,7 +1,6 @@
 (function() {
   function testNoteControllerCanBeInstantiated() {
-    var notelist = new NoteList;
-    var noteController = new NoteController(notelist, NoteListView);
+    var noteController = new NoteController(notelistmock, NoteListView);
     assert.isTrue(noteController instanceof NoteController);
   }
 
