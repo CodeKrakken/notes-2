@@ -7,6 +7,8 @@
   testNoteControllerCanBeInstantiated();
 })(this);
 
+clearDoubles();
+
 (function() {
   function testNoteControllerStoresNoteListModel() {
     var noteController = new NoteController(notelistmock, NoteListView);
@@ -15,6 +17,8 @@
 
   testNoteControllerStoresNoteListModel();
 })(this);
+
+clearDoubles();
 
 (function() {
   function testNoteControllerCanAddANote() {
@@ -26,6 +30,8 @@
   testNoteControllerCanAddANote();
 })(this);
 
+clearDoubles();
+
 (function() {
   function testNoteControllerCreatesANoteListView() {
     var noteController = new NoteController(notelistmock, NoteListView);
@@ -34,6 +40,8 @@
 
   testNoteControllerCreatesANoteListView();
 })(this);
+
+clearDoubles();
 
 (function() {
   function testNoteControllerNoteListViewStoresNoteList() {
@@ -44,10 +52,11 @@
   testNoteControllerNoteListViewStoresNoteList();
 })(this);
 
+clearDoubles();
+
 (function() {
   function testNoteListControllerGetsHTMLFromNoteListView() {
-    var notelist = new NoteList;
-    var noteController = new NoteController(notelist, NoteListView);
+    var noteController = new NoteController(notelistmock, NoteListView);
     noteController.notelist.createNote("Favourite drink: seltzer, after the salsa");
     noteController.getHTML();
     assert.isTrue(noteController.content === '<div align="center"><ul><li>Favourite drink: seltzer, after the salsa</li></ul></div>');
@@ -55,6 +64,8 @@
 
   testNoteListControllerGetsHTMLFromNoteListView();
 })(this);
+
+clearDoubles();
 
 (function() {
   function testNoteControllerPutsHTMLIntoAppElement() {
