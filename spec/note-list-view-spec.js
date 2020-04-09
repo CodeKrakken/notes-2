@@ -1,3 +1,8 @@
+function clearDoubles() {
+  notelistmock.notes = [];
+  notelistmock.texts = [];
+};
+
 var notelistmock = {
   notes : [],
   texts : [],
@@ -19,14 +24,19 @@ var notelistmock = {
   testStoresANoteListModel();
 })(this);
 
+clearDoubles();
+
 (function() {
   function testReturnsSingleItemNoteListWithHTML() {
+    notelistmock.createNote("Yes indeed, ladies and gentlemen");
     var notelistview = new NoteListView(notelistmock);
-    assert.isTrue(notelistview.returnHTML() === '<div align="center"><ul><li>I LIVE</li></ul></div>');
+    assert.isTrue(notelistview.returnHTML() === '<div align="center"><ul><li>Yes indeed, ladies and gentlemen</li></ul></div>');
   }
 
   testReturnsSingleItemNoteListWithHTML();
 })(this);
+
+clearDoubles();
 
 (function() {
   function testReturnsSeveralItemNoteListWithHTML() {
@@ -41,6 +51,8 @@ var notelistmock = {
   testReturnsSeveralItemNoteListWithHTML();
 })(this);
 
+clearDoubles();
+
 (function() {
   function testReturnsNoItemListWithHTML() {
     var notelist = new NoteList;
@@ -50,3 +62,5 @@ var notelistmock = {
 
   testReturnsNoItemListWithHTML();
 })(this);
+
+clearDoubles();
