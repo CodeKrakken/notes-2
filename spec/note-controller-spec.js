@@ -18,8 +18,7 @@
 
 (function() {
   function testNoteControllerCanAddANote() {
-    var notelist = new NoteList;
-    var noteController = new NoteController(notelist, NoteListView);
+    var noteController = new NoteController(notelistmock, NoteListView);
     noteController.notelist.createNote("Favourite drink: seltzer, after the salsa");
     assert.isTrue(noteController.notelist.notes[0].text === "Favourite drink: seltzer, after the salsa");
   }
