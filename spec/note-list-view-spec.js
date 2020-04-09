@@ -1,13 +1,12 @@
+var notelistmock = {
+  notes : [],
+  createNote : function(text) {
+    this.notes.push(text);
+  }
+};
+
 (function() {
-  function testStoresANoteListModel() {
-    
-    var notelistmock = {
-      notes : [],
-      createNote : function(text) {
-        this.notes.push(text);
-      }
-    }
-    
+  function testStoresANoteListModel() {    
     notelistmock.createNote("I LIVE");
     var notelistview = new NoteListView(notelistmock);
     assert.isTrue(notelistview.notelist.notes[0] === "I LIVE");
