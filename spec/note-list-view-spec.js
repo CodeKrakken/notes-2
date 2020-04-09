@@ -1,15 +1,19 @@
 var notelistmock = {
   notes : [],
+  texts : [],
   createNote : function(text) {
-    this.notes.push(text);
+    var note = {
+      text : text
+    }
+    this.notes.push(note);
   }
 };
 
 (function() {
-  function testStoresANoteListModel() {    
+  function testStoresANoteListModel() {
     notelistmock.createNote("I LIVE");
     var notelistview = new NoteListView(notelistmock);
-    assert.isTrue(notelistview.notelist.notes[0] === "I LIVE");
+    assert.isTrue(notelistview.notelist.notes[0].text === "I LIVE");
   }
 
   testStoresANoteListModel();
@@ -17,9 +21,7 @@ var notelistmock = {
 
 (function() {
   function testReturnsSingleItemNoteListWithHTML() {
-    var notelist = new NoteList;
-    notelist.createNote("I LIVE");
-    var notelistview = new NoteListView(notelist);
+    var notelistview = new NoteListView(notelistmock);
     assert.isTrue(notelistview.returnHTML() === '<div align="center"><ul><li>I LIVE</li></ul></div>');
   }
 
