@@ -9,9 +9,8 @@
 
 (function() {
   function testNoteControllerStoresNoteListModel() {
-    var notelist = new NoteList;
-    var noteController = new NoteController(notelist, NoteListView);
-    assert.isTrue(noteController.notelist instanceof NoteList);
+    var noteController = new NoteController(notelistmock, NoteListView);
+    assert.isTrue(noteController.notelist);
   }
 
   testNoteControllerStoresNoteListModel();
