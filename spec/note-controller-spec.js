@@ -67,7 +67,6 @@
     var noteController = new NoteController(notelist, NoteListView);
     noteController.notelist.createNote("Favourite drink: seltzer, after the salsa");
     assert.isTrue(document.getElementById("app").innerHTML === '<div align="center"><ul><li>Favourite drink: seltzer, after the salsa</li></ul></div>');
-  
   }
 
   testNoteControllerPutsHTMLIntoAppElement();

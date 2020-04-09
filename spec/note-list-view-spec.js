@@ -1,9 +1,16 @@
 (function() {
   function testStoresANoteListModel() {
-    var notelist = new NoteList;
-    notelist.createNote("I LIVE");
-    var notelistview = new NoteListView(notelist);
-    assert.isTrue(notelistview.notelist.notes[0].text === "I LIVE");
+    
+    var notelistmock = {
+      notes : [],
+      createNote : function(text) {
+        this.notes.push(text);
+      }
+    }
+    
+    notelistmock.createNote("I LIVE");
+    var notelistview = new NoteListView(notelistmock);
+    assert.isTrue(notelistview.notelist.notes[0] === "I LIVE");
   }
 
   testStoresANoteListModel();
