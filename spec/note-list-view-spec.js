@@ -4,11 +4,11 @@ function clearDoubles() {
 };
 
 var notelistmock = {
-  notes : [],
-  texts : [],
+  notes: [],
+  texts: [],
   createNote : function(text) {
     var note = {
-      text : text
+      text: text
     }
     this.notes.push(note);
   }
@@ -54,7 +54,7 @@ clearDoubles();
 
 (function() {
   function testReturnsNoItemListWithHTML() {
-    notelistview = new NoteListView(notelistmock);
+    var notelistview = new NoteListView(notelistmock);
     assert.isTrue(notelistview.returnHTML() === '<div align="center"><ul><li></li></ul></div>')
   }
 
