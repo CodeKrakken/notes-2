@@ -1,7 +1,3 @@
-newNote = function() {
-  return new Note("My favourite language is JavaScript");
-};
-
 (function() {
   function testNoteStoresInitialText() {
     var note = newNote();

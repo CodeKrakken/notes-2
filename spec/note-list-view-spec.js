@@ -1,19 +1,3 @@
-function clearDoubles() {
-  notelistmock.notes = [];
-  notelistmock.texts = [];
-};
-
-var notelistmock = {
-  notes: [],
-  texts: [],
-  createNote : function(text) {
-    var note = {
-      text: text
-    }
-    this.notes.push(note);
-  }
-};
-
 (function() {
   function testStoresANoteListModel() {
     notelistmock.createNote("I LIVE");
