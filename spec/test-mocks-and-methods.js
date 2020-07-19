@@ -1,6 +1,7 @@
 function clearDoubles() {
   notelistmock.notes = [];
   notelistmock.texts = [];
+  notelistmock.previews = []
 };
 
 var notemock = {
@@ -10,6 +11,7 @@ var notemock = {
 var notelistmock = {
   notes: [],
   texts: [],
+  previews: [],
   createNote : function(text) {
     var note = {
       text: text
