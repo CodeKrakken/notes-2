@@ -15,3 +15,12 @@
 
   testTextCanBeRetrieved();
 })(this);
+
+(function() {
+  function testNoteHasAnID() {
+    var note = new Note("1 - ID should be 0");
+    assert.isTrue(note.id === 0)
+  };
+
+  testNoteHasAnID();
+})(this);
