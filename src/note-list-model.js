@@ -1,6 +1,7 @@
 (function(exports) {
   function NoteList() {
     this.notes = [];
+    this.previews = [];
     this.texts = [];
   }
 

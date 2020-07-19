@@ -57,9 +57,9 @@ clearDoubles();
 (function() {
   function testNoteListControllerGetsHTMLFromNoteListView() {
     var noteController = new NoteController(notelistmock, NoteListView);
-    noteController.notelist.createNote("Favourite drink: seltzer, after the salsa");
+    noteController.notelist.createNote("Seltzer, post salsa");
     noteController.getHTML();
-    assert.isTrue(noteController.content === '<div align="center"><ul><li>Favourite drink: seltzer, after the salsa</li></ul></div>');
+    assert.isTrue(noteController.content === '<div align="center"><ul><li>Seltzer, post salsa</li></ul></div>');
   }
 
   testNoteListControllerGetsHTMLFromNoteListView();
@@ -70,8 +70,8 @@ clearDoubles();
 (function() {
   function testNoteControllerPutsHTMLIntoAppElement() {
     var noteController = new NoteController(notelistmock, NoteListView);
-    noteController.notelist.createNote("Favourite drink: seltzer, after the salsa");
-    assert.isTrue(document.getElementById("app").innerHTML === '<div align="center"><ul><li>Favourite drink: seltzer, after the salsa</li></ul></div>');
+    noteController.notelist.createNote("Seltzer, post salsa");
+    assert.isTrue(document.getElementById("app").innerHTML === '<div align="center"><ul><li>Seltzer, post salsa</li></ul></div>');
   }
 
   testNoteControllerPutsHTMLIntoAppElement();

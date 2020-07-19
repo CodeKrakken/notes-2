@@ -12,9 +12,9 @@ clearDoubles();
 
 (function() {
   function testReturnsSingleItemNoteListWithHTML() {
-    notelistmock.createNote("Yes indeed, ladies and gentlemen");
+    notelistmock.createNote("Yes indeed");
     var notelistview = new NoteListView(notelistmock);
-    assert.isTrue(notelistview.returnHTML() === '<div align="center"><ul><li>Yes indeed, ladies and gentlemen</li></ul></div>');
+    assert.isTrue(notelistview.returnHTML() === '<div align="center"><ul><li>Yes indeed</li></ul></div>');
   }
 
   testReturnsSingleItemNoteListWithHTML();
@@ -46,3 +46,13 @@ clearDoubles();
 })(this);
 
 clearDoubles();
+
+(function() {
+  function testReturnsFirst20CharactersOfLongNote() {
+    notelistmock.createNote("This message is too long to be displayed in its entirety")
+    var notelistview = new NoteListView(notelistmock);
+    assert.isTrue(notelistview.returnHTML() === '<div align="center"><ul><li>This message is too </li></ul></div>')
+  }
+
+  testReturnsFirst20CharactersOfLongNote();
+})(this);

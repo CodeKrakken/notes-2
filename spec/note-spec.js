@@ -1,6 +1,6 @@
 (function() {
   function testNoteStoresInitialText() {
-    var note = newNote();
+    var note = new Note("My favourite language is JavaScript");
     assert.isTrue(note.text === "My favourite language is JavaScript");
   };
 
@@ -9,7 +9,7 @@
 
 (function() {
   function testTextCanBeRetrieved() {
-    var note = newNote();
+    var note = new Note("My favourite language is JavaScript");
     assert.isTrue(note.retrieve() === "My favourite language is JavaScript");
   };
 

@@ -3,8 +3,8 @@ function clearDoubles() {
   notelistmock.texts = [];
 };
 
-newNote = function() {
-  return new Note("My favourite language is JavaScript");
+var notemock = {
+  text: "Favourite Drink: Seltzer, after the salsa"
 };
 
 var notelistmock = {
@@ -18,6 +18,4 @@ var notelistmock = {
   }
 };
 
-var notemock = {
-  text: "Favourite Drink: Seltzer, after the salsa"
-};
+var notelistviewmock;
